@@ -1,0 +1,6 @@
+C:\Users\Lox\Documents\Visual Studio 2008\Projects\OrpheusStub\OrpheusStub\bin\x86\Debug\OrpheusStub.exe
+C:\Users\Lox\Documents\Visual Studio 2008\Projects\OrpheusStub\OrpheusStub\bin\x86\Debug\OrpheusStub.pdb
+C:\Users\Lox\Documents\Visual Studio 2008\Projects\OrpheusStub\OrpheusStub\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Lox\Documents\Visual Studio 2008\Projects\OrpheusStub\OrpheusStub\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Lox\Documents\Visual Studio 2008\Projects\OrpheusStub\OrpheusStub\obj\x86\Debug\OrpheusStub.exe
+C:\Users\Lox\Documents\Visual Studio 2008\Projects\OrpheusStub\OrpheusStub\obj\x86\Debug\OrpheusStub.pdb
