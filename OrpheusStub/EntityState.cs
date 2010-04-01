@@ -29,6 +29,12 @@ namespace OrpheusStub
         }
 
 
+        public EntityState(int numStates) {
+            this.numStates = numStates;
+            states = new State[numStates];
+            currentState = states[0];
+        }
+
         public void nextState() { }
         public void nextState(Passage passage) { }
         public void nextState(Item item) { }

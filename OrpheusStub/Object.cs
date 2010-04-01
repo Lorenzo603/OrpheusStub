@@ -12,5 +12,11 @@ namespace OrpheusStub
             get { return _owner; }
             set { _owner = value; }
         }
+
+
+        public override void talk()
+        {
+            
+        }
     }
 }

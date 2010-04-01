@@ -7,11 +7,13 @@ namespace OrpheusStub
 {
     class Character: Entity
     {
-        
 
+        public override void talk() {
+            entityState.currentState.dialogue.start();
+        }
 
         public void sayLine(Line line) {
-            
+            Console.WriteLine(line.line);
         }
 
         public void notifyPickUp() {}

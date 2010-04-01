@@ -22,7 +22,7 @@ namespace OrpheusStub
         }
 
         private Model _model;
-        public Vector3 model
+        public Model model
         {
             get { return _model; }
             set { _model = value; }
@@ -34,5 +34,12 @@ namespace OrpheusStub
             set { _entityState = value; }
         }
 
+
+
+        public void lookAt() { }
+        public void pickUp() { }
+        abstract public void talk();
+
+        public void useItem() { }
     }
 }

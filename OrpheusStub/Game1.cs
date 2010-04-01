@@ -18,19 +18,20 @@ namespace OrpheusStub
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        KeyboardState previousKeyboardState;
+
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+
+        MainCharacter orfeo;
         Character caronte;
             EntityState caronteEntityState;
             State caronteState;
             Dialogue caronteDialogue;
-                ChoosePassage cp1;
+                ChoosePassage firstCP;
                 Passage p1;
                 Passage p2;
-                    Line l1;
-                    Line l2;
-        Item ciboCani;
 
 
 
@@ -49,10 +50,30 @@ namespace OrpheusStub
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+          
+            orfeo = new MainCharacter();
+            caronte = new Character();
 
+            p1 = new Passage(firstCP, caronteEntityState, 2);
+                p1.addLine(new Line(orfeo, "Parla orfeo"), 0);
+                p1.addLine(new Line(caronte, "parla caronte"), 1);
+            p2 = new Passage(null, caronteEntityState, 0);
+            firstCP = new ChoosePassage(2);
+                firstCP.addPassage(p1,0);
+                firstCP.addLine(new Line(orfeo, "parla di qualcosa"), 0);
+                firstCP.addPassage(p2, 1);
+                firstCP.addLine(new Line(orfeo, "esci dal dialogo"), 1);
+            caronteDialogue = new Dialogue(firstCP);
 
-
-
+            caronteState = new State();
+                caronteState.lineLookAt = new Line(caronte, "caronte -> lookat");
+                caronteState.linePickUp = new Line(caronte, "caronte -> pickup");
+                caronteState.dialogue = caronteDialogue;
+            caronteEntityState = new EntityState(1);
+                caronteEntityState.states[0] = caronteState;
+                caronteEntityState.currentState = caronteState;
+            
+            caronte.entityState = caronteEntityState;
 
             base.Initialize();
         }
@@ -90,6 +111,14 @@ namespace OrpheusStub
                 this.Exit();
 
             // TODO: Add your update logic here
+
+            KeyboardState keyboardState = Keyboard.GetState();
+            if (keyboardState.IsKeyDown(Keys.T) && previousKeyboardState.IsKeyUp(Keys.T))
+            {
+                caronte.talk();
+            }
+
+            previousKeyboardState = keyboardState;
 
             base.Update(gameTime);
         }

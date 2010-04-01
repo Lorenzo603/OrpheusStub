@@ -20,7 +20,12 @@ namespace OrpheusStub
 
         private void answer(Line question) { }
 
-        public void start() { }
+        public void start() { 
+            foreach (Line line in currentChoosePassage.passages[0].lines) {
+                line.character.sayLine(line);
+            }
+            
+        }
 
         public void end() { }
     }
